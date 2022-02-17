@@ -1,0 +1,9 @@
+@mixin police-title{
+  font-family: Shrikhand;
+}
+@mixin police-text{
+  @include police-text;
+}
+@mixin shadow($color,$size1,$size2,$size3){
+  box-shadow: $size1 $size2 $size3 $color;
+}
