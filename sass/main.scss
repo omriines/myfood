@@ -1,6 +1,6 @@
-@media all and (max-width: 767px) {
   @import "./utils/variables";
   @import "./utils/mixins";
+  @include mobile-only(){
   body {
     padding: 0px;
     margin: 0px;
@@ -21,7 +21,6 @@
     margin: 0px;
     background-color: $color-back-main;
   }
-
   .search {
     text-align: center;
     padding-bottom: 60px;
