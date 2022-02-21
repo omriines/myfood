@@ -1,6 +1,8 @@
   @import "./utils/variables";
   @import "./utils/mixins";
-  @include mobile-only(){
+  @import "./layouts/header";
+  @import "./layouts/footer";
+  @import "components/buttons";
   body {
     padding: 0px;
     margin: 0px;
@@ -10,16 +12,12 @@
     padding: 0px;
     margin: 0px;
   }
-  .logo {
-    @include police-title;
-    text-align: center;
-    margin: 12px 0px 12px 0px;
-  }
+
   .main {
     width: 100%;
     padding: 0px;
     margin: 0px;
-    background-color: $color-back-main;
+    background-color: $color-back;
   }
   .search {
     text-align: center;
@@ -45,7 +43,7 @@
       }
     }
 
-    & h2 {
+    & h1 {
       @include police-text;
       margin-top: 44px;
     }
@@ -55,17 +53,6 @@
       font-weight: 400;
     }
 
-    &__button {
-      @include police-text;
-      font-weight: 450;
-      border: none;
-      height: 50px;
-      width: 217px;
-      color: white;
-      margin-top: 32px;
-      background-image:linear-gradient($color-primary,$color-secondary);
-      border-radius: 35px 35px 35px 35px;
-    }
   }
 
 
@@ -75,7 +62,7 @@
     background-color:$color-background;
     padding: 50px 20px 68px 20px;
 
-    & h3 {
+    & h2 {
       margin-left: 20px;
       @include police-text;
       margin-bottom: 30px;
@@ -94,6 +81,7 @@
       & span {
         color: white;
         background-color: $color-primary;
+        @include police-text;
         text-align: center;
         border-radius: 13px;
         position: absolute;
@@ -109,12 +97,12 @@
         font-size: 20px;
       }
 
-      & > h4 {
+      & > h3 {
         margin-top: 32px;
         @include police-text;
       }
 
-      & i + h4 {
+      & i + h3 {
         margin-left: 28px;
       }
     }
@@ -130,16 +118,16 @@
     display: flex;
     flex-direction: column;
     grid-row-gap: 20px;
-    & h3{
+    & h2{
       @include police-text;
     }
-    & h5{
+    & h3{
       margin-top:19px;
       margin-bottom: 12px;
       font-size: 20px;
       @include police-text;
     }
-    & h6{
+    & h4{
       font-weight: 300;
       font-size: 15px;
       @include police-text;
@@ -183,29 +171,7 @@
     }
   }
 
-  footer {
-    background-color: black;
-    color: white;
-    padding-bottom: 37px;
-    & h2 {
-      @include police-title;
-      padding-top: 27px;
-      padding-left: 25px;
-      font-size: 20px;
-    }
-    & ul {
-      list-style: none;
-      padding-top: 23px;
-      padding-left: 25px;
-      & li {
-        @include police-text;
-        padding-bottom: 11px;
-        & i{
-          margin-right:12px;
-        }
-      }
-    }
-  }
 
-}
+
+
 
