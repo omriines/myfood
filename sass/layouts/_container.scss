@@ -1,5 +1,5 @@
 .container {
-
+  @include back-img;
   &__menu {
     background-color: $color-back;
     border-radius: 15px 15px 0px 0px;

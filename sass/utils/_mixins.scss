@@ -35,9 +35,10 @@
 @mixin size-logo{
   font-size: 40px;
 }
-@mixin back-img($img){
-  background-image: $img;
+@mixin back-img{
   background-size: contain;
   width: 100%;
   padding-top: 50%;
+  margin: 0px;
 }
+
