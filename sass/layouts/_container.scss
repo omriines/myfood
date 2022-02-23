@@ -11,14 +11,12 @@
       @include size-title-container;
       padding-bottom: 34px;
     }
-
     & i {
       position: absolute;
       right: 37px;
       top: 37px;
       font-size: 26px;
     }
-
     .type {
       &__menu {
         display: flex;
@@ -35,7 +33,6 @@
           margin-bottom: 11px;
           width: max-content;
         }
-
         & .card {
           background-color: $color-background;
           border-radius: 15px;
@@ -45,7 +42,6 @@
             @include police-text;
             @include size-tile-menu
           }
-
           & span {
             display: flex;
             justify-content: space-between;
