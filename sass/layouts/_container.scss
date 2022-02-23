@@ -1,0 +1,69 @@
+.container {
+  @include back-img;
+  &__menu {
+    background-color: $color-back;
+    border-radius: 15px 15px 0px 0px;
+    padding: 34px;
+    position: relative;
+
+    & h1 {
+      @include police-title;
+      @include size-title-container;
+      padding-bottom: 34px;
+    }
+
+    & i {
+      position: absolute;
+      right: 37px;
+      top: 37px;
+      font-size: 26px;
+    }
+
+    .type {
+      &__menu {
+        display: flex;
+        flex-direction: column;
+        grid-row-gap: 11px;
+        margin-bottom: 45px;
+
+        & h3 {
+          @include police-text;
+          @include size-tile-menu;
+          font-weight: 200;
+          text-transform: uppercase;
+          border-bottom: solid $color-tertiary;
+          margin-bottom: 11px;
+          width: max-content;
+        }
+
+        & .card {
+          background-color: $color-background;
+          border-radius: 15px;
+          padding: 18px 26px 11px 12px;
+
+          & h4 {
+            @include police-text;
+            @include size-tile-menu
+          }
+
+          & span {
+            display: flex;
+            justify-content: space-between;
+
+            & h5 {
+              @include police-text;
+              font-weight: 200;
+              @include size-desription-menu
+            }
+          }
+        }
+      }
+    }
+  }
+  & .btn {
+    @include btn;
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+}

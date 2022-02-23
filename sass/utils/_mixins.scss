@@ -1,12 +1,44 @@
 @mixin mobile-only {
-  @media all and (max-width: 767px){}
+  @media all and (max-width: 767px){
+
+  }
 }
 @mixin police-title{
   font-family: Shrikhand;
 }
 @mixin police-text{
-  @include police-text;
+  font-family: Roboto;
 }
 @mixin shadow($color,$size1,$size2,$size3){
   box-shadow: $size1 $size2 $size3 $color;
 }
+@mixin btn{
+  @include police-text;
+  font-weight: 450;
+  border: none;
+  height: 50px;
+  width: 217px;
+  color: white;
+  margin-top: 32px;
+  background-image:linear-gradient($color-primary,$color-secondary);
+  border-radius: 35px 35px 35px 35px;
+}
+@mixin size-tile-menu(){
+  font-size: 20px;
+}
+@mixin size-desription-menu(){
+  font-size: 15px;
+}
+@mixin size-title-container(){
+  font-size: 30px;
+}
+@mixin size-logo{
+  font-size: 40px;
+}
+@mixin back-img{
+  background-size: contain;
+  width: 100%;
+  padding-top: 50%;
+  margin: 0px;
+}
+

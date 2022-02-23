@@ -1,0 +1,8 @@
+.header {
+  &__logo{
+  @include police-title;
+  text-align: center;
+  margin: 12px 0px 12px 0px;
+  @include size-logo;
+  }
+}
