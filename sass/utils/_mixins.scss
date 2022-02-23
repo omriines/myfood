@@ -23,3 +23,21 @@
   background-image:linear-gradient($color-primary,$color-secondary);
   border-radius: 35px 35px 35px 35px;
 }
+@mixin size-tile-menu(){
+  font-size: 20px;
+}
+@mixin size-desription-menu(){
+  font-size: 15px;
+}
+@mixin size-title-container(){
+  font-size: 30px;
+}
+@mixin size-logo{
+  font-size: 40px;
+}
+@mixin back-img($img){
+  background-image: $img;
+  background-size: contain;
+  width: 100%;
+  padding-top: 50%;
+}
