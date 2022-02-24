@@ -2,6 +2,10 @@
   width: 100%;
   padding: 0px;
   margin: 0px;
+  @include breakpoints(map-get($breakpoints,desktop),min){
+    width: 1024px;
+    margin: 0px auto;
+  }
 }
 .main {
   width: 100%;
@@ -43,6 +47,13 @@
 .function {
   display: flex;
   flex-direction: column;
+  & span{
+  @include breakpoints(map-get($breakpoints,desktop),min){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  }
   background-color: $color-background;
   padding: 50px 31px 68px 20px;
 
@@ -50,6 +61,9 @@
     margin-left: 20px;
     @include police-text;
     margin-bottom: 30px;
+    @include breakpoints(map-get($breakpoints,desktop),min){
+      margin-left: 0px;
+    }
   }
 
   &__type {
@@ -61,6 +75,9 @@
     background-color: $color-back;
     @include shadow($color-back, 10px, 5px, 5px);
     border-radius: 25px 25px 25px 25px;
+    @include breakpoints(map-get($breakpoints,desktop),min){
+      @include shadow($color-back, 0px, 0px, 0px);
+    }
 
     & span {
       color: white;
@@ -74,6 +91,14 @@
       width: 26px;
       height: 23px;
       padding-top: 3px;
+      @include breakpoints(map-get($breakpoints,desktop),min){
+        left: -12px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        width: 10px;
+      }
     }
 
     & > i {
@@ -83,6 +108,7 @@
 
     & > h3 {
       margin-top: 32px;
+      padding-right: 20px;
       @include police-text;
     }
 
@@ -103,6 +129,15 @@
   display: flex;
   flex-direction: column;
   grid-row-gap: 20px;
+  @include breakpoints(map-get($breakpoints,desktop),min){
+    & span{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      grid-row-gap: 20px;
+      grid-column-gap: 2%;
+    }
+  }
 
   & h2 {
     @include police-text;
@@ -127,6 +162,9 @@
     padding-bottom: 12px;
     border-radius: 15px 15px 15px 15px;
     position: relative;
+    @include breakpoints(map-get($breakpoints,desktop),min){
+      width: 32%;
+    }
 
     & .notif {
       background-color: $color-tertiary;
@@ -141,6 +179,9 @@
       @include police-text;
       text-align: center;
       padding-top: 7px;
+      @include breakpoints(map-get($breakpoints,desktop),min){
+        padding-left: 14px;
+      }
     }
 
     & .description {
