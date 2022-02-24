@@ -1,10 +1,27 @@
 .container {
   @include back-img;
+  &__image-bg{
+    display: none;
+  }
+  @include breakpoints(map-get($breakpoints,desktop),min){
+    width: 1024px;
+    margin: 0px auto;
+    &__image-bg {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 294px;
+    }
+    padding-top: 0%;
+  }
   &__menu {
     background-color: $color-back;
     border-radius: 15px 15px 0px 0px;
     padding: 34px;
     position: relative;
+    @include breakpoints(map-get($breakpoints,desktop),min){
+      border-radius:0px;
+    }
 
     & h1 {
       @include police-title;
@@ -20,11 +37,21 @@
     }
 
     .type {
+      @include breakpoints(map-get($breakpoints,desktop),min){
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        grid-row-gap: 20px;
+        grid-column-gap: 2%;
+      }
       &__menu {
         display: flex;
         flex-direction: column;
         grid-row-gap: 11px;
         margin-bottom: 45px;
+        @include breakpoints(map-get($breakpoints,desktop),min){
+          width: 32%;
+        }
 
         & h3 {
           @include police-text;
@@ -37,13 +64,17 @@
         }
 
         & .card {
+          display: flex;
+          flex-direction: column;
           background-color: $color-background;
           border-radius: 15px;
           padding: 18px 26px 11px 12px;
-
+          @include breakpoints(map-get($breakpoints,desktop),min){
+            line-height: 40px;
+          }
           & h4 {
             @include police-text;
-            @include size-tile-menu
+            @include size-tile-menu;
           }
 
           & span {

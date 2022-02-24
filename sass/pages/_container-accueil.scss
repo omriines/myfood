@@ -3,8 +3,8 @@
   padding: 0px;
   margin: 0px;
   @include breakpoints(map-get($breakpoints,desktop),min){
-    width: 1024px;
-    margin: 0px auto;
+    max-width: 1170px;
+    margin:  auto;
   }
 }
 .main {
@@ -148,6 +148,9 @@
     margin-bottom: 12px;
     font-size: 20px;
     @include police-text;
+    & a{
+      text-decoration: none;
+    }
   }
 
   & h4 {

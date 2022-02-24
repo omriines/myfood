@@ -10,8 +10,6 @@
     }
   }
   }
-
-
 @mixin police-title {
   font-family: Shrikhand;
 }
@@ -37,11 +35,11 @@
 }
 
 @mixin size-tile-menu() {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 @mixin size-desription-menu() {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 @mixin size-title-container() {

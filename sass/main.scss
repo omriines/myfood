@@ -6,18 +6,28 @@
 @import "./layouts/container";
 @import "pages/container-accueil";
 @import "base/normalize";
-
-.container-bg-1 {
-  background-image: $img-back-cont1;
+@include breakpoints(map-get($breakpoints,mobile),max) {
+  .container-bg-1 {
+    background-image: $img-back-cont1;
+    background-repeat: no-repeat;
+  }
+  .container-bg-2 {
+    background-image: $img-back-cont2;
+    background-repeat: no-repeat;
+  }
+  .container-bg-3 {
+    background-image: $img-back-cont3;
+    background-repeat: no-repeat;
+  }
+  .container-bg-4 {
+    background-image: $img-back-cont4;
+    background-repeat: no-repeat;
+  }
 }
-.container-bg-2 {
-  background-image: $img-back-cont2;
-}
-.container-bg-3 {
-  background-image: $img-back-cont3;
-}
-.container-bg-4 {
-  background-image: $img-back-cont4;
+@include breakpoints(map-get($breakpoints,desktop),min) {
+  .container-bg-1,.container-bg-2,.container-bg-3,.container-bg-4 {
+    background-image: none;
+  }
 }
 
 
