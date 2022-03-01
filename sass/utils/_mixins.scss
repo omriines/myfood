@@ -1,15 +1,17 @@
-@mixin breakpoints($breakpoint,$width) {
-  @if $width == max {
+@mixin breakpoints($breakpoint,$width,$etat) {
+  @if $width == max and $etat == false {
     @media all and (max-width: $breakpoint) {
       @content;
     }
   }
-  @else if $width == min {
+  @else if $width == min  and $etat==false {
     @media (min-width: $breakpoint) {
       @content;
     }
+
   }
   }
+
 @mixin police-title {
   font-family: Shrikhand;
 }
@@ -56,4 +58,11 @@
   padding-top: 50%;
   margin: 0px;
 }
-
+@mixin back-img-desk {
+  background-size: 100% 50%, contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-top: 30%;
+  margin: 0px;
+}

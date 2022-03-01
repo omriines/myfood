@@ -3,8 +3,9 @@
   &__image-bg{
     display: none;
   }
-  @include breakpoints(map-get($breakpoints,desktop),min){
-    width: 1024px;
+  @include breakpoints(map-get($breakpoints,desktop),min,false) {
+    @include back-img-desk;
+    /*
     margin: 0px auto;
     &__image-bg {
       display: block;
@@ -13,13 +14,14 @@
       height: 294px;
     }
     padding-top: 0%;
+  }*/
   }
   &__menu {
     background-color: $color-back;
     border-radius: 15px 15px 0px 0px;
     padding: 34px;
     position: relative;
-    @include breakpoints(map-get($breakpoints,desktop),min){
+    @include breakpoints(map-get($breakpoints,desktop),min,false){
       border-radius:0px;
     }
 
@@ -37,7 +39,7 @@
     }
 
     .type {
-      @include breakpoints(map-get($breakpoints,desktop),min){
+      @include breakpoints(map-get($breakpoints,desktop),min,false){
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -49,7 +51,7 @@
         flex-direction: column;
         grid-row-gap: 11px;
         margin-bottom: 45px;
-        @include breakpoints(map-get($breakpoints,desktop),min){
+        @include breakpoints(map-get($breakpoints,desktop),min,false){
           width: 32%;
         }
 
@@ -69,7 +71,7 @@
           background-color: $color-background;
           border-radius: 15px;
           padding: 18px 26px 11px 12px;
-          @include breakpoints(map-get($breakpoints,desktop),min){
+          @include breakpoints(map-get($breakpoints,desktop),min,false){
             line-height: 40px;
           }
           & h4 {

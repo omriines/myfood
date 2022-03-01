@@ -50,17 +50,24 @@ footer ul li i {
 .container__image-bg {
   display: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .container {
-    width: 1024px;
-    margin: 0px auto;
-    padding-top: 0%;
-  }
-  .container__image-bg {
-    display: block;
-    object-fit: cover;
+    background-size: 100% 50%, contain;
+    background-position: top;
+    background-repeat: no-repeat;
     width: 100%;
-    height: 294px;
+    padding-top: 30%;
+    margin: 0px;
+    /*
+      margin: 0px auto;
+      &__image-bg {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 294px;
+      }
+      padding-top: 0%;
+    }*/
   }
 }
 .container__menu {
@@ -69,7 +76,7 @@ footer ul li i {
   padding: 34px;
   position: relative;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .container__menu {
     border-radius: 0px;
   }
@@ -85,7 +92,7 @@ footer ul li i {
   top: 37px;
   font-size: 26px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .container__menu .type {
     display: flex;
     flex-direction: row;
@@ -100,7 +107,7 @@ footer ul li i {
   grid-row-gap: 11px;
   margin-bottom: 45px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .container__menu .type__menu {
     width: 32%;
   }
@@ -121,7 +128,7 @@ footer ul li i {
   border-radius: 15px;
   padding: 18px 26px 11px 12px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .container__menu .type__menu .card {
     line-height: 40px;
   }
@@ -159,9 +166,8 @@ footer ul li i {
   padding: 0px;
   margin: 0px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .container-accueil {
-    max-width: 1170px;
     margin: auto;
   }
 }
@@ -209,11 +215,24 @@ footer ul li i {
   background-color: #FFFFFF;
   padding: 50px 31px 68px 20px;
 }
-@media (min-width: 1024px) {
+.function span {
+  /*@include breakpoints(map-get($breakpoints,tablette),min,true){*/
+}
+@media (min-width: 993px) {
   .function span {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-column-gap: 2%;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .function span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    grid-column-gap: 2%;
   }
 }
 .function h2 {
@@ -221,7 +240,7 @@ footer ul li i {
   font-family: Roboto;
   margin-bottom: 30px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .function h2 {
     margin-left: 0px;
   }
@@ -236,9 +255,10 @@ footer ul li i {
   box-shadow: 10px 5px 5px #f6f6f6;
   border-radius: 25px 25px 25px 25px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .function__type {
     box-shadow: 0px 0px 0px #f6f6f6;
+    width: 29%;
   }
 }
 .function__type span {
@@ -254,7 +274,7 @@ footer ul li i {
   height: 23px;
   padding-top: 3px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .function__type span {
     left: -12px;
     text-align: center;
@@ -288,8 +308,18 @@ footer ul li i {
   display: flex;
   flex-direction: column;
   grid-row-gap: 20px;
+  /* @include breakpoints(map-get($breakpoints,tablette),min,true) {*/
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
+  .restaurant span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-row-gap: 20px;
+    grid-column-gap: 2%;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
   .restaurant span {
     display: flex;
     flex-direction: row;
@@ -321,10 +351,17 @@ footer ul li i {
   padding-bottom: 12px;
   border-radius: 15px 15px 15px 15px;
   position: relative;
+  margin-bottom: 25px;
+  /*@include breakpoints(map-get($breakpoints,tablette),min,true) {*/
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .restaurant__card {
     width: 32%;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .restaurant__card {
+    width: 49%;
   }
 }
 .restaurant__card .notif {
@@ -341,7 +378,7 @@ footer ul li i {
   text-align: center;
   padding-top: 7px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .restaurant__card .notif {
     padding-left: 14px;
   }
@@ -712,29 +749,25 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-@media all and (max-width: 768px) {
-  .container-bg-1 {
-    background-image: url("../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
-    background-repeat: no-repeat;
-  }
-
-  .container-bg-2 {
-    background-image: url("../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
-    background-repeat: no-repeat;
-  }
-
-  .container-bg-3 {
-    background-image: url("../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-    background-repeat: no-repeat;
-  }
-
-  .container-bg-4 {
-    background-image: url("../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
-    background-repeat: no-repeat;
-  }
+/*@include breakpoints(map-get($breakpoints,mobile),max,false) {*/
+.container-bg-1 {
+  background-image: url("../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
 }
-@media (min-width: 1024px) {
-  .container-bg-1, .container-bg-2, .container-bg-3, .container-bg-4 {
+
+.container-bg-2 {
+  background-image: url("../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+
+.container-bg-3 {
+  background-image: url("../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+.container-bg-4 {
+  background-image: url("../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+
+/* @include breakpoints(map-get($breakpoints,desktop),min,false) {
+  .container-bg-1,.container-bg-2,.container-bg-3,.container-bg-4 {
     background-image: none;
   }
-}
+} */

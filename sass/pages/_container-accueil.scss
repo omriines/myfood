@@ -2,10 +2,10 @@
   width: 100%;
   padding: 0px;
   margin: 0px;
-  @include breakpoints(map-get($breakpoints,desktop),min){
-    max-width: 1170px;
+  @include breakpoints(map-get($breakpoints,desktop),min,false){
     margin:  auto;
   }
+
 }
 .main {
   width: 100%;
@@ -47,13 +47,25 @@
 .function {
   display: flex;
   flex-direction: column;
-  & span{
-  @include breakpoints(map-get($breakpoints,desktop),min){
+  @include breakpoints(map-get($breakpoints,desktop),min,false){
+    & span{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-column-gap: 2%;
   }
-  }
+    /*@include breakpoints(map-get($breakpoints,tablette),min,true){*/
+
+    @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
+      @include breakpoints(map-get($breakpoints,desktop)-1, max,false) {
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      grid-column-gap: 2%;
+    }
+  }}
   background-color: $color-background;
   padding: 50px 31px 68px 20px;
 
@@ -61,7 +73,7 @@
     margin-left: 20px;
     @include police-text;
     margin-bottom: 30px;
-    @include breakpoints(map-get($breakpoints,desktop),min){
+    @include breakpoints(map-get($breakpoints,desktop),min,false){
       margin-left: 0px;
     }
   }
@@ -75,8 +87,9 @@
     background-color: $color-back;
     @include shadow($color-back, 10px, 5px, 5px);
     border-radius: 25px 25px 25px 25px;
-    @include breakpoints(map-get($breakpoints,desktop),min){
+    @include breakpoints(map-get($breakpoints,desktop),min,false){
       @include shadow($color-back, 0px, 0px, 0px);
+      width: 29%;
     }
 
     & span {
@@ -91,7 +104,7 @@
       width: 26px;
       height: 23px;
       padding-top: 3px;
-      @include breakpoints(map-get($breakpoints,desktop),min){
+      @include breakpoints(map-get($breakpoints,desktop),min,false){
         left: -12px;
         text-align: center;
         padding-left: 10px;
@@ -129,13 +142,26 @@
   display: flex;
   flex-direction: column;
   grid-row-gap: 20px;
-  @include breakpoints(map-get($breakpoints,desktop),min){
+  @include breakpoints(map-get($breakpoints,desktop),min,false){
     & span{
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       grid-row-gap: 20px;
       grid-column-gap: 2%;
+    }
+  }
+ /* @include breakpoints(map-get($breakpoints,tablette),min,true) {*/
+
+  @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
+    @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
+      & span {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        grid-row-gap: 20px;
+        grid-column-gap: 2%;
+      }
     }
   }
 
@@ -165,10 +191,16 @@
     padding-bottom: 12px;
     border-radius: 15px 15px 15px 15px;
     position: relative;
-    @include breakpoints(map-get($breakpoints,desktop),min){
+    margin-bottom: 25px;
+    @include breakpoints(map-get($breakpoints,desktop),min,false){
       width: 32%;
     }
-
+    /*@include breakpoints(map-get($breakpoints,tablette),min,true) {*/
+    @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
+      @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
+        width: 49%;
+      }
+    }
     & .notif {
       background-color: $color-tertiary;
       position: absolute;
@@ -182,7 +214,10 @@
       @include police-text;
       text-align: center;
       padding-top: 7px;
-      @include breakpoints(map-get($breakpoints,desktop),min){
+      @include breakpoints(map-get($breakpoints,desktop),min,false){
+        padding-left: 14px;
+      }
+      @include breakpoints(map-get($breakpoints,tablette),min,true){
         padding-left: 14px;
       }
     }

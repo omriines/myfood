@@ -6,29 +6,25 @@
 @import "./layouts/container";
 @import "pages/container-accueil";
 @import "base/normalize";
-@include breakpoints(map-get($breakpoints,mobile),max) {
+/*@include breakpoints(map-get($breakpoints,mobile),max,false) {*/
   .container-bg-1 {
     background-image: $img-back-cont1;
-    background-repeat: no-repeat;
   }
   .container-bg-2 {
     background-image: $img-back-cont2;
-    background-repeat: no-repeat;
   }
   .container-bg-3 {
     background-image: $img-back-cont3;
-    background-repeat: no-repeat;
   }
   .container-bg-4 {
     background-image: $img-back-cont4;
-    background-repeat: no-repeat;
   }
-}
-@include breakpoints(map-get($breakpoints,desktop),min) {
+
+/* @include breakpoints(map-get($breakpoints,desktop),min,false) {
   .container-bg-1,.container-bg-2,.container-bg-3,.container-bg-4 {
     background-image: none;
   }
-}
+} */
 
 
 
