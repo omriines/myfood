@@ -215,10 +215,10 @@ footer ul li i {
   background-color: #FFFFFF;
   padding: 50px 31px 68px 20px;
 }
-.function span {
-  /*@include breakpoints(map-get($breakpoints,tablette),min,true){*/
-}
 @media (min-width: 993px) {
+  .function {
+    /*@include breakpoints(map-get($breakpoints,tablette),min,true){*/
+  }
   .function span {
     display: flex;
     flex-direction: row;
@@ -226,8 +226,8 @@ footer ul li i {
     grid-column-gap: 2%;
   }
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .function span {
+@media (min-width: 993px) and (min-width: 768px) and (max-width: 992px) {
+  .function {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
