@@ -230,6 +230,14 @@ footer ul li i {
   animation: rotation 500ms linear;
   color: white;
 }
+.container__menu .type__menu .card:hover span h5:first-child {
+  font-family: Roboto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  width: 250px;
+}
 .container__menu .type__menu--1 {
   animation: couleur 1s;
 }
