@@ -31,7 +31,7 @@
       padding-bottom: 34px;
     }
 
-    & i {
+    & .fa-heart  {
       position: absolute;
       right: 37px;
       top: 37px;
@@ -67,28 +67,57 @@
 
         & .card {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          justify-content: space-between;
           background-color: $color-background;
           border-radius: 15px;
-          padding: 18px 26px 11px 12px;
-          @include breakpoints(map-get($breakpoints,desktop),min,false){
+          @include breakpoints(map-get($breakpoints, desktop), min, false) {
             line-height: 40px;
           }
-          & h4 {
-            @include police-text;
-            @include size-tile-menu;
-          }
-
-          & span {
+          &__contain {
             display: flex;
-            justify-content: space-between;
-
-            & h5 {
+            flex-direction: column;
+            padding: 18px 26px 11px 12px;
+            width: 100%;
+            & h4 {
               @include police-text;
-              font-weight: 200;
-              @include size-desription-menu
+              @include size-tile-menu;
+            }
+            & span {
+              display: flex;
+              justify-content: space-between;
+              & h5 {
+                @include police-text;
+                font-weight: 200;
+                @include size-desription-menu
+              }
             }
           }
+          &__symbole{
+            background-color: $color-tertiary;
+            border-radius:0px 15px 15px 0px;
+            transition: width 400ms linear 0s;
+            width: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & i{
+              color:transparent;
+              font-size: 30px;
+            }
+          }
+          &:hover {
+         & .card__symbole {
+              /*animation: progress-bar 1000ms;*/
+              width: 20%;
+         & i{
+           animation: rotation 500ms linear ;
+           color:white;
+         }
+            }
+          }
+
+
         }
       }
     }

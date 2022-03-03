@@ -232,8 +232,21 @@
     & i {
       margin-top: 25px;
       font-size: 27px;
+    }.fa-heart {
+       color: #FFF;
+       background-color: #000;
+       border-radius: 50%;
+       padding:.2em;
+     }
+    .fa-heart::before {
+      content: "\f004";
+      font-weight: bold;
+      transition: color 1s ease-out;
     }
-
+    .fa-heart:hover::before{
+      color: red;
+      cursor: pointer;
+    }
     & img {
       width: 100%;
       height: 174px;

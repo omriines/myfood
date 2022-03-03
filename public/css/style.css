@@ -1,3 +1,14 @@
+@keyframes rotation {
+  0% {
+    transform: rotate(0) translateX(0px);
+  }
+  25% {
+    transform: rotate(360deg) translateX(0px);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0px);
+  }
+}
 .header__logo {
   font-family: Shrikhand;
   text-align: center;
@@ -86,7 +97,7 @@ footer ul li i {
   font-size: 30px;
   padding-bottom: 34px;
 }
-.container__menu i {
+.container__menu .fa-heart {
   position: absolute;
   right: 37px;
   top: 37px;
@@ -123,28 +134,55 @@ footer ul li i {
 }
 .container__menu .type__menu .card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #FFFFFF;
   border-radius: 15px;
-  padding: 18px 26px 11px 12px;
 }
 @media (min-width: 993px) {
   .container__menu .type__menu .card {
     line-height: 40px;
   }
 }
-.container__menu .type__menu .card h4 {
+.container__menu .type__menu .card__contain {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 26px 11px 12px;
+  width: 100%;
+}
+.container__menu .type__menu .card__contain h4 {
   font-family: Roboto;
   font-size: 18px;
 }
-.container__menu .type__menu .card span {
+.container__menu .type__menu .card__contain span {
   display: flex;
   justify-content: space-between;
 }
-.container__menu .type__menu .card span h5 {
+.container__menu .type__menu .card__contain span h5 {
   font-family: Roboto;
   font-weight: 200;
   font-size: 13px;
+}
+.container__menu .type__menu .card__symbole {
+  background-color: #99E2D0;
+  border-radius: 0px 15px 15px 0px;
+  transition: width 400ms linear 0s;
+  width: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container__menu .type__menu .card__symbole i {
+  color: transparent;
+  font-size: 30px;
+}
+.container__menu .type__menu .card:hover .card__symbole {
+  /*animation: progress-bar 1000ms;*/
+  width: 20%;
+}
+.container__menu .type__menu .card:hover .card__symbole i {
+  animation: rotation 500ms linear;
+  color: white;
 }
 .container .btn {
   font-family: Roboto;
@@ -392,6 +430,21 @@ footer ul li i {
 .restaurant__card i {
   margin-top: 25px;
   font-size: 27px;
+}
+.restaurant__card .fa-heart {
+  color: #FFF;
+  background-color: #000;
+  border-radius: 50%;
+  padding: 0.2em;
+}
+.restaurant__card .fa-heart::before {
+  content: "\f004";
+  font-weight: bold;
+  transition: color 1s ease-out;
+}
+.restaurant__card .fa-heart:hover::before {
+  color: red;
+  cursor: pointer;
 }
 .restaurant__card img {
   width: 100%;
