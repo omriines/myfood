@@ -9,6 +9,37 @@
     transform: rotate(360deg) translateX(0px);
   }
 }
+@keyframes affichage {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+@keyframes couleur {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
 .header__logo {
   font-family: Shrikhand;
   text-align: center;
@@ -69,16 +100,6 @@ footer ul li i {
     width: 100%;
     padding-top: 30%;
     margin: 0px;
-    /*
-      margin: 0px auto;
-      &__image-bg {
-        display: block;
-        object-fit: cover;
-        width: 100%;
-        height: 294px;
-      }
-      padding-top: 0%;
-    }*/
   }
 }
 .container__menu {
@@ -183,6 +204,15 @@ footer ul li i {
 .container__menu .type__menu .card:hover .card__symbole i {
   animation: rotation 500ms linear;
   color: white;
+}
+.container__menu .type__menu--1 {
+  animation: couleur 1s;
+}
+.container__menu .type__menu--2 {
+  animation: couleur 2s;
+}
+.container__menu .type__menu--3 {
+  animation: couleur 3s;
 }
 .container .btn {
   font-family: Roboto;
