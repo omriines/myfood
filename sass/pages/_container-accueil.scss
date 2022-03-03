@@ -1,8 +1,23 @@
-.container-accueil{
-  display: none;
-}
 
+.loading{
+  border:10px solid $color-secondary;
+  border-top:10px solid $color-primary;
+  border-bottom:10px solid $color-secondary;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: load 2s linear;
+  animation-fill-mode: forwards;
+  margin: auto;
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
 .container-accueil{
+  animation: display-contain 4s linear;
+  animation-fill-mode: forwards;
   width: 100%;
   padding: 0px;
   margin: 0px;
