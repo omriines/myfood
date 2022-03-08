@@ -347,8 +347,8 @@ footer ul li i {
     grid-column-gap: 2%;
   }
 }
-@media (min-width: 993px) and (min-width: 768px) and (max-width: 992px) {
-  .function {
+@media (min-width: 768px) and (max-width: 992px) {
+  .function span {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -375,6 +375,15 @@ footer ul li i {
   background-color: #f6f6f6;
   box-shadow: 10px 5px 5px #f6f6f6;
   border-radius: 25px 25px 25px 25px;
+}
+.function__type:hover {
+  transform: scale(1.05);
+}
+.function__type .fa-store {
+  color: #9356DC;
+}
+.function__type .fa-mobile-alt, .function__type .fa-list {
+  color: dimgrey;
 }
 @media (min-width: 993px) {
   .function__type {
@@ -460,6 +469,7 @@ footer ul li i {
 }
 .restaurant h3 a {
   text-decoration: none;
+  color: black;
 }
 .restaurant h4 {
   font-weight: 300;
@@ -488,6 +498,9 @@ footer ul li i {
   .restaurant__card {
     width: 32%;
   }
+  .restaurant__card:hover {
+    transform: scale(1.05);
+  }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .restaurant__card {
@@ -513,6 +526,11 @@ footer ul li i {
     padding-left: 14px;
   }
 }
+@media (min-width: ) {
+  .restaurant__card .notif {
+    padding-left: 14px;
+  }
+}
 .restaurant__card .description {
   display: flex;
   justify-content: space-between;
@@ -531,6 +549,7 @@ footer ul li i {
   color: transparent;
   background-image: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
+  -webkit-background-clip: text;
   cursor: pointer;
   opacity: 0;
 }

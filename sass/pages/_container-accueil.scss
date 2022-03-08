@@ -63,24 +63,25 @@
 .function {
   display: flex;
   flex-direction: column;
-  @include breakpoints(map-get($breakpoints,desktop),min,false){
+ 
     & span{
+      @include breakpoints(map-get($breakpoints,desktop),min,false){
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     grid-column-gap: 2%;
   }
 
-    @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
-      @include breakpoints(map-get($breakpoints,desktop)-1, max,false) {
-
+  @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
+    @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-evenly;
       grid-column-gap: 2%;
     }
-  }}
+  }
+}
   background-color: $color-background;
   padding: 50px 31px 68px 20px;
 
@@ -102,6 +103,15 @@
     background-color: $color-back;
     @include shadow($color-back, 10px, 5px, 5px);
     border-radius: 25px 25px 25px 25px;
+    &:hover{
+      transform: scale(1.05);
+    }
+    & .fa-store{
+      color:$color-primary;
+    }
+    & .fa-mobile-alt, .fa-list{
+     color:dimgrey;
+    }
     @include breakpoints(map-get($breakpoints,desktop),min,false){
       @include shadow($color-back, 0px, 0px, 0px);
       width: 29%;
@@ -191,6 +201,7 @@
     @include police-text;
     & a{
       text-decoration: none;
+      color: black;
     }
   }
 
@@ -209,6 +220,9 @@
     margin-bottom: 25px;
     @include breakpoints(map-get($breakpoints,desktop),min,false){
       width: 32%;
+      &:hover{
+        transform: scale(1.05);
+      }
     }
     /*@include breakpoints(map-get($breakpoints,tablette),min,true) {*/
     @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
@@ -255,6 +269,7 @@
           color: transparent;
           background-image: linear-gradient($color-primary, $color-secondary);
           background-clip: text;
+          -webkit-background-clip: text;
           cursor: pointer;
           opacity: 0; 
     }
