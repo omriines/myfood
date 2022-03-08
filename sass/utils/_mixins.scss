@@ -1,11 +1,11 @@
 @mixin breakpoints($breakpoint,$width,$etat) {
   @if $width == max {
-    @media all and (max-width: $breakpoint) {
+    @media screen and (max-width: $breakpoint) {
       @content;
     }
   }
   @else if $width == min   {
-    @media (min-width: $breakpoint) {
+    @media screen and(min-width: $breakpoint) {
       @content;
     }
 
