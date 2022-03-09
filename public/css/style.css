@@ -234,9 +234,21 @@ header a:active::before {
   font-size: 18px;
   font-weight: 200;
   text-transform: uppercase;
-  border-bottom: solid #99E2D0;
   margin-bottom: 11px;
   width: max-content;
+  font-weight: 300;
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+}
+.container__menu .type__menu h3:after {
+  content: "";
+  position: absolute;
+  width: 74%;
+  height: 1px;
+  bottom: 0;
+  left: 0%;
+  border-bottom: solid #99E2D0;
 }
 .container__menu .type__menu .card {
   display: flex;

@@ -102,10 +102,23 @@ header a:active::before{
           @include size-tile-menu;
           font-weight: 200;
           text-transform: uppercase;
-          border-bottom: solid $color-tertiary;
           margin-bottom: 11px;
           width: max-content;
+          font-weight: 300;
+          display: inline-block;
+          padding-bottom: 5px;
+          position: relative;
         }
+        h3:after{
+            content: "";
+            position: absolute;
+            width: 74%;
+            height: 1px;
+            bottom: 0;
+            left: 0%;
+            border-bottom: solid $color-tertiary;
+        }
+        
         & .card {
           display: flex;
           flex-direction: row;
