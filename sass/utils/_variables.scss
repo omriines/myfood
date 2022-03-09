@@ -6,8 +6,9 @@ $color-search-button:#e3abeb;
 $color-background:#FFFFFF;
 $color-back:#f6f6f6;
 $color-notif:#008766;
+$color-black:#000000;
+$color-icone:#696969;
 $anim-delay:1s;
-$active:false;
 $img-back-cont1:url("../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
 $img-back-cont2:url("../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
 $img-back-cont3:url("../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
@@ -16,8 +17,6 @@ $breakpoints: (
         mobile: 767px,
         desktop: 993px
 );
-
-
 @keyframes rotation {
   0% {
     transform: rotate(0) translateX(0px);

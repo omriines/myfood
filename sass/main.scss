@@ -6,7 +6,6 @@
 @import "./layouts/container";
 @import "pages/container-accueil";
 @import "base/normalize";
-/*@include breakpoints(map-get($breakpoints,mobile),max,false) {*/
   .container-bg-1 {
     background-image: $img-back-cont1;
   }
@@ -19,12 +18,6 @@
   .container-bg-4 {
     background-image: $img-back-cont4;
   }
-
-/* @include breakpoints(map-get($breakpoints,desktop),min,false) {
-  .container-bg-1,.container-bg-2,.container-bg-3,.container-bg-4 {
-    background-image: none;
-  }
-} */
 
 
 

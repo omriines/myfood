@@ -1,6 +1,6 @@
 footer {
-  background-color: black;
-  color: white;
+  background-color:$color-black;
+  color: $color-background;
   padding-bottom: 37px;
   & h2 {
     @include police-title;
@@ -15,9 +15,19 @@ footer {
     & li {
       @include police-text;
       padding-bottom: 11px;
+      & a {
+        text-decoration: none;
+        color: $color-background;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
       & i{
         margin-right:12px;
       }
+    }
+    & li:first-child a{
+      padding-left:7px;
     }
   }
 }

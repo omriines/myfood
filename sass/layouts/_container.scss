@@ -1,9 +1,6 @@
 header a::before{
   position: absolute;
   display: flex;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f060";
   top: 33px;
@@ -21,15 +18,15 @@ header a:active::before{
   &__image-bg{
     display: none;
   }
-  @include breakpoints(map-get($breakpoints,desktop),min,false) {
+  @include breakpoints(map-get($breakpoints,desktop),min) {
     @include back-img-desk;
   }
   &__menu {
     background-color: $color-back;
     border-radius: 15px 15px 0px 0px;
     padding: 34px;
-    @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
-      @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
+    @include breakpoints(map-get($breakpoints,mobile)+1, min) {
+      @include breakpoints(map-get($breakpoints,desktop)-1, max) {
         padding: 34px 15% 34px 15%;
       }
     }
@@ -46,12 +43,12 @@ header a:active::before{
       right: 37px;
       top: 37px;
       font-size: 26px;
-      @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
-        @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
+      @include breakpoints(map-get($breakpoints,mobile)+1, min) {
+        @include breakpoints(map-get($breakpoints,desktop)-1, max) {
           right: 120px;
         }
       }
-      @include breakpoints(map-get($breakpoints,desktop),min,false){
+      @include breakpoints(map-get($breakpoints,desktop),min){
         right:65px;
       }
     }
@@ -70,19 +67,18 @@ header a:active::before{
    }
    &:hover .far{
     opacity: 0;
-    
    }
   }
     .type {
-      @include breakpoints(map-get($breakpoints,desktop),min,false){
+      @include breakpoints(map-get($breakpoints,desktop),min){
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         grid-row-gap: 20px;
         grid-column-gap: 2%;
       }
-      @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
-        @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
+      @include breakpoints(map-get($breakpoints,mobile)+1, min) {
+        @include breakpoints(map-get($breakpoints,desktop)-1, max) {
           display: flex;
           flex-direction: column;
           grid-row-gap: 20px;
@@ -94,10 +90,10 @@ header a:active::before{
         flex-direction: column;
         grid-row-gap: 11px;
         margin-bottom: 45px;
-        @include breakpoints(map-get($breakpoints,desktop),min,false){
+        @include breakpoints(map-get($breakpoints,desktop),min){
           width: 48%;
         }
-        & h3 {
+        & h2 {
           @include police-text;
           @include size-tile-menu;
           font-weight: 200;
@@ -109,7 +105,7 @@ header a:active::before{
           padding-bottom: 5px;
           position: relative;
         }
-        h3:after{
+        h2:after{
             content: "";
             position: absolute;
             width: 74%;
@@ -118,7 +114,6 @@ header a:active::before{
             left: 0%;
             border-bottom: solid $color-tertiary;
         }
-        
         & .card {
           display: flex;
           flex-direction: row;
@@ -126,12 +121,12 @@ header a:active::before{
           background-color: $color-background;
           border-radius: 15px;
           line-height:30px;
-          @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
-            @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
+          @include breakpoints(map-get($breakpoints,mobile)+1, min) {
+            @include breakpoints(map-get($breakpoints,desktop)-1, max) {
               line-height:30px;
             }
           }
-          @include breakpoints(map-get($breakpoints, desktop), min, false) {
+          @include breakpoints(map-get($breakpoints, desktop), min) {
             line-height: 40px;
           }
           &__contain {
@@ -139,14 +134,14 @@ header a:active::before{
             flex-direction: column;
             padding: 18px 26px 11px 12px;
             width: 100%;
-            & h4 {
+            & h3 {
               @include police-text;
               @include size-tile-menu;
             }
-            & span {
+            & .subtitle {
               display: flex;
               justify-content: space-between;
-              & h5 {
+              & h4 {
                 @include police-text;
                 font-weight: 200;
                 @include size-desription-menu;
@@ -168,14 +163,13 @@ header a:active::before{
           }
           &:hover {
          & .card__symbole {
-              /*animation: progress-bar 1000ms;*/
               width: 20%;
          & i{
            animation: rotation 500ms linear ;
-           color:white;
+           color:$color-background;
          }
          }
-           & span h5:first-child {
+           & .subtitle h4:first-child {
              @include police-text;
              overflow: hidden;
              white-space: nowrap;
