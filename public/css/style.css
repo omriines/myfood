@@ -72,8 +72,8 @@
 }
 
 footer {
-  background-color: black;
-  color: white;
+  background-color: #000000;
+  color: #FFFFFF;
   padding-bottom: 37px;
 }
 footer h2 {
@@ -91,8 +91,18 @@ footer ul li {
   font-family: Roboto;
   padding-bottom: 11px;
 }
+footer ul li a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}
 footer ul li i {
   margin-right: 12px;
+}
+footer ul li:first-child a {
+  padding-left: 7px;
 }
 
 .btn {
@@ -114,9 +124,6 @@ footer ul li i {
 header a::before {
   position: absolute;
   display: flex;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -145,7 +152,7 @@ header a:active::before {
 @media screen and (min-width: 993px) {
   .container {
     background-size: 100% 50%, contain;
-    background-position: top;
+    background-position: 30% -36%;
     background-repeat: no-repeat;
     width: 100%;
     padding-top: 30%;
@@ -229,7 +236,7 @@ header a:active::before {
     width: 48%;
   }
 }
-.container__menu .type__menu h3 {
+.container__menu .type__menu h2 {
   font-family: Roboto;
   font-size: 18px;
   font-weight: 200;
@@ -241,7 +248,7 @@ header a:active::before {
   padding-bottom: 5px;
   position: relative;
 }
-.container__menu .type__menu h3:after {
+.container__menu .type__menu h2:after {
   content: "";
   position: absolute;
   width: 74%;
@@ -274,15 +281,15 @@ header a:active::before {
   padding: 18px 26px 11px 12px;
   width: 100%;
 }
-.container__menu .type__menu .card__contain h4 {
+.container__menu .type__menu .card__contain h3 {
   font-family: Roboto;
   font-size: 18px;
 }
-.container__menu .type__menu .card__contain span {
+.container__menu .type__menu .card__contain .subtitle {
   display: flex;
   justify-content: space-between;
 }
-.container__menu .type__menu .card__contain span h5 {
+.container__menu .type__menu .card__contain .subtitle h4 {
   font-family: Roboto;
   font-weight: 200;
   font-size: 13px;
@@ -301,14 +308,13 @@ header a:active::before {
   font-size: 30px;
 }
 .container__menu .type__menu .card:hover .card__symbole {
-  /*animation: progress-bar 1000ms;*/
   width: 20%;
 }
 .container__menu .type__menu .card:hover .card__symbole i {
   animation: rotation 500ms linear;
-  color: white;
+  color: #FFFFFF;
 }
-.container__menu .type__menu .card:hover span h5:first-child {
+.container__menu .type__menu .card:hover .subtitle h4:first-child {
   font-family: Roboto;
   overflow: hidden;
   white-space: nowrap;
@@ -418,7 +424,7 @@ header a:active::before {
   padding: 50px 31px 68px 20px;
 }
 @media screen and (min-width: 993px) {
-  .function span {
+  .function__liste {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -426,7 +432,7 @@ header a:active::before {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  .function span {
+  .function__liste {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -444,33 +450,34 @@ header a:active::before {
     margin-left: 0px;
   }
 }
-.function__type {
+.function .type {
   display: flex;
   height: 79px;
   position: relative;
   margin-bottom: 20px;
   padding-left: 35px;
   background-color: #f6f6f6;
+  cursor: pointer;
   box-shadow: 10px 5px 5px #f6f6f6;
   border-radius: 25px 25px 25px 25px;
 }
-.function__type:hover {
+.function .type:hover {
   transform: scale(1.05);
 }
-.function__type .fa-store {
+.function .type .fa-store {
   color: #9356DC;
 }
-.function__type .fa-mobile-alt, .function__type .fa-list {
-  color: dimgrey;
+.function .type .fa-mobile-alt, .function .type .fa-list {
+  color: #696969;
 }
 @media screen and (min-width: 993px) {
-  .function__type {
+  .function .type {
     box-shadow: 0px 0px 0px #f6f6f6;
     width: 29%;
   }
 }
-.function__type span {
-  color: white;
+.function .type .chiffre {
+  color: #FFFFFF;
   background-color: #9356DC;
   font-family: Roboto;
   text-align: center;
@@ -483,7 +490,7 @@ header a:active::before {
   padding-top: 3px;
 }
 @media screen and (min-width: 993px) {
-  .function__type span {
+  .function .type .chiffre {
     left: -12px;
     text-align: center;
     padding-left: 10px;
@@ -492,16 +499,16 @@ header a:active::before {
     width: 10px;
   }
 }
-.function__type > i {
+.function .type > i {
   margin-top: 32px;
   font-size: 20px;
 }
-.function__type > h3 {
+.function .type > h3 {
   margin-top: 32px;
   padding-right: 20px;
   font-family: Roboto;
 }
-.function__type i + h3 {
+.function .type i + h3 {
   margin-left: 28px;
 }
 
@@ -516,10 +523,9 @@ header a:active::before {
   display: flex;
   flex-direction: column;
   grid-row-gap: 20px;
-  /* @include breakpoints(map-get($breakpoints,tablette),min,true) {*/
 }
 @media screen and (min-width: 993px) {
-  .restaurant span {
+  .restaurant__liste {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -528,7 +534,7 @@ header a:active::before {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  .restaurant span {
+  .restaurant__liste {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -545,38 +551,35 @@ header a:active::before {
   font-size: 20px;
   font-family: Roboto;
 }
-.restaurant h3 a {
-  text-decoration: none;
-  color: black;
-}
 .restaurant h4 {
   font-weight: 300;
   font-size: 15px;
   font-family: Roboto;
 }
-.restaurant__card {
+.restaurant .cards {
   background-color: #FFFFFF;
   width: auto;
   padding-bottom: 12px;
   border-radius: 15px 15px 15px 15px;
   position: relative;
   margin-bottom: 25px;
-  /*@include breakpoints(map-get($breakpoints,tablette),min,true) {*/
+  text-decoration: none;
+  color: #000000;
 }
 @media screen and (min-width: 993px) {
-  .restaurant__card {
+  .restaurant .cards {
     width: 32%;
   }
-  .restaurant__card:hover {
+  .restaurant .cards:hover {
     transform: scale(1.05);
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  .restaurant__card {
+  .restaurant .cards {
     width: 49%;
   }
 }
-.restaurant__card .notif {
+.restaurant .cards .notif {
   background-color: #99E2D0;
   position: absolute;
   border: none;
@@ -591,28 +594,28 @@ header a:active::before {
   padding-top: 7px;
 }
 @media screen and (min-width: 993px) {
-  .restaurant__card .notif {
+  .restaurant .cards .notif {
     padding-left: 14px;
   }
 }
-@media screen and (min-width: ) {
-  .restaurant__card .notif {
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .restaurant .cards .notif {
     padding-left: 14px;
   }
 }
-.restaurant__card .description {
+.restaurant .cards .description {
   display: flex;
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 26px;
   position: relative;
 }
-.restaurant__card .description__heart i {
+.restaurant .cards .description__heart i {
   margin-top: 25px;
   padding-right: 2px;
   font-size: 27px;
 }
-.restaurant__card .description__heart .fas {
+.restaurant .cards .description__heart .fas {
   position: absolute;
   right: 1px;
   color: transparent;
@@ -622,12 +625,15 @@ header a:active::before {
   cursor: pointer;
   opacity: 0;
 }
-.restaurant__card .description__heart:hover .fas {
+.restaurant .cards .description__heart:hover .fas {
   opacity: 1;
   transition-duration: 100ms;
   transform: scale(1.2);
 }
-.restaurant__card img {
+.restaurant .cards .description__heart:hover .far {
+  opacity: 0;
+}
+.restaurant .cards img {
   width: 100%;
   height: 174px;
   object-fit: cover;
@@ -983,7 +989,6 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-/*@include breakpoints(map-get($breakpoints,mobile),max,false) {*/
 .container-bg-1 {
   background-image: url("../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
 }
@@ -999,9 +1004,3 @@ h1, h2, h3, h4, h5, h6 {
 .container-bg-4 {
   background-image: url("../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
 }
-
-/* @include breakpoints(map-get($breakpoints,desktop),min,false) {
-  .container-bg-1,.container-bg-2,.container-bg-3,.container-bg-4 {
-    background-image: none;
-  }
-} */

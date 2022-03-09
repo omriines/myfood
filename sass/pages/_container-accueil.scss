@@ -21,7 +21,7 @@
   width: 100%;
   padding: 0px;
   margin: 0px;
-  @include breakpoints(map-get($breakpoints,desktop),min,false){
+  @include breakpoints(map-get($breakpoints,desktop),min){
     margin:  auto;
   }
 }
@@ -64,16 +64,16 @@
   display: flex;
   flex-direction: column;
  
-    & span{
-      @include breakpoints(map-get($breakpoints,desktop),min,false){
+    &__liste{
+      @include breakpoints(map-get($breakpoints,desktop),min){
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     grid-column-gap: 2%;
   }
 
-  @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
-    @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
+  @include breakpoints(map-get($breakpoints,mobile)+1, min) {
+    @include breakpoints(map-get($breakpoints,desktop)-1, max) {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -89,18 +89,19 @@
     margin-left: 20px;
     @include police-text;
     margin-bottom: 30px;
-    @include breakpoints(map-get($breakpoints,desktop),min,false){
+    @include breakpoints(map-get($breakpoints,desktop),min){
       margin-left: 0px;
     }
   }
 
-  &__type {
+  & .type {
     display: flex;
     height: 79px;
     position: relative;
     margin-bottom: 20px;
     padding-left: 35px;
     background-color: $color-back;
+    cursor: pointer;
     @include shadow($color-back, 10px, 5px, 5px);
     border-radius: 25px 25px 25px 25px;
     &:hover{
@@ -110,15 +111,15 @@
       color:$color-primary;
     }
     & .fa-mobile-alt, .fa-list{
-     color:dimgrey;
+     color:$color-icone;
     }
-    @include breakpoints(map-get($breakpoints,desktop),min,false){
+    @include breakpoints(map-get($breakpoints,desktop),min){
       @include shadow($color-back, 0px, 0px, 0px);
       width: 29%;
     }
 
-    & span {
-      color: white;
+    & .chiffre {
+      color: $color-background;
       background-color: $color-primary;
       @include police-text;
       text-align: center;
@@ -129,7 +130,7 @@
       width: 26px;
       height: 23px;
       padding-top: 3px;
-      @include breakpoints(map-get($breakpoints,desktop),min,false){
+      @include breakpoints(map-get($breakpoints,desktop),min){
         left: -12px;
         text-align: center;
         padding-left: 10px;
@@ -164,8 +165,8 @@
   display: flex;
   flex-direction: column;
   grid-row-gap: 20px;
-  @include breakpoints(map-get($breakpoints,desktop),min,false){
-    & span{
+  @include breakpoints(map-get($breakpoints,desktop),min){
+    &__liste{
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -173,11 +174,10 @@
       grid-column-gap: 2%;
     }
   }
- /* @include breakpoints(map-get($breakpoints,tablette),min,true) {*/
 
-  @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
-    @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
-      & span {
+  @include breakpoints(map-get($breakpoints,mobile)+1, min) {
+    @include breakpoints(map-get($breakpoints,desktop)-1, max) {
+      &__liste{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -196,10 +196,6 @@
     margin-bottom: 12px;
     font-size: 20px;
     @include police-text;
-    & a{
-      text-decoration: none;
-      color: black;
-    }
   }
 
   & h4 {
@@ -208,22 +204,24 @@
     @include police-text;
   }
 
-  &__card {
+  & .cards {
     background-color: $color-background;
     width: auto;
     padding-bottom: 12px;
     border-radius: 15px 15px 15px 15px;
     position: relative;
     margin-bottom: 25px;
-    @include breakpoints(map-get($breakpoints,desktop),min,false){
+    text-decoration: none;
+    color: $color-black;
+  
+    @include breakpoints(map-get($breakpoints,desktop),min){
       width: 32%;
       &:hover{
         transform: scale(1.05);
       }
     }
-    /*@include breakpoints(map-get($breakpoints,tablette),min,true) {*/
-    @include breakpoints(map-get($breakpoints,mobile)+1, min,false) {
-      @include breakpoints(map-get($breakpoints,desktop)-1, max, false) {
+    @include breakpoints(map-get($breakpoints,mobile)+1, min) {
+      @include breakpoints(map-get($breakpoints,desktop)-1, max) {
         width: 49%;
       }
     }
@@ -240,12 +238,14 @@
       @include police-text;
       text-align: center;
       padding-top: 7px;
-      @include breakpoints(map-get($breakpoints,desktop),min,false){
+      @include breakpoints(map-get($breakpoints,desktop),min){
         padding-left: 14px;
       }
-      @include breakpoints(map-get($breakpoints,tablette),min,true){
+      @include breakpoints(map-get($breakpoints,mobile)+1, min) {
+        @include breakpoints(map-get($breakpoints,desktop)-1, max) {
         padding-left: 14px;
       }
+    }
     }
 
     & .description {
@@ -275,6 +275,9 @@
         transition-duration: 100ms;
         transform: scale(1.2);
        } 
+       &:hover .far{
+        opacity: 0;
+       }
   }
 }
     & img {

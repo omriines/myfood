@@ -1,4 +1,4 @@
-@mixin breakpoints($breakpoint,$width,$etat) {
+@mixin breakpoints($breakpoint,$width) {
   @if $width == max {
     @media screen and (max-width: $breakpoint) {
       @content;
@@ -64,7 +64,7 @@
 }
 @mixin back-img-desk {
   background-size: 100% 50%, contain;
-  background-position: top;
+  background-position: 30% -36%;
   background-repeat: no-repeat;
   width: 100%;
   padding-top: 30%;
