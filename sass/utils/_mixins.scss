@@ -1,16 +1,15 @@
-@mixin breakpoints($breakpoint,$width) {
+/*Fixer les breakpoints*/
+@mixin breakpoints($breakpoint, $width) {
   @if $width == max {
     @media screen and (max-width: $breakpoint) {
       @content;
     }
-  }
-  @else if $width == min   {
+  } @else if $width == min {
     @media screen and(min-width: $breakpoint) {
       @content;
     }
-
   }
-  }
+}
 
 @mixin police-title {
   font-family: Shrikhand;
@@ -20,7 +19,7 @@
   font-family: Roboto;
 }
 
-@mixin shadow($color,$size1,$size2,$size3) {
+@mixin shadow($color, $size1, $size2, $size3) {
   box-shadow: $size1 $size2 $size3 $color;
 }
 
@@ -34,7 +33,7 @@
   margin-top: 32px;
   background-image: linear-gradient($color-primary, $color-secondary);
   border-radius: 35px 35px 35px 35px;
-  &:hover{
+  &:hover {
     cursor: pointer;
     box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
   }
@@ -55,13 +54,24 @@
 @mixin size-logo {
   font-size: 40px;
 }
-
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-column-gap: 2%;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+/*Régler le background de la version mobile*/
 @mixin back-img {
   background-size: contain;
   width: 100%;
   padding-top: 50%;
   margin: 0px;
 }
+/*Régler le background de la version desktop*/
 @mixin back-img-desk {
   background-size: 100% 50%, contain;
   background-position: 30% -36%;
@@ -70,4 +80,19 @@
   padding-top: 30%;
   margin: 0px;
 }
-
+@mixin animation-coeur-fas {
+  color: transparent;
+  background-image: linear-gradient($color-primary, $color-secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  cursor: pointer;
+  opacity: 0;
+}
+@mixin animation-coeur-hover-fas {
+  opacity: 1;
+  transition-duration: 100ms;
+  transform: scale(1.2);
+}
+@mixin animation-coeur-hover-far {
+  opacity: 0;
+}
