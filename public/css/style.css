@@ -213,7 +213,7 @@ header a::before {
 .container__menu .type__menu {
   display: flex;
   flex-direction: column;
-  grid-row-gap: 11px;
+  grid-row-gap: 20px;
   margin-bottom: 45px;
   /*Régler le soulignement de titre*/
   /*Boucle For pour afficher les 3 menus avec animatio*/
@@ -272,6 +272,10 @@ header a::before {
 .container__menu .type__menu .card__contain h3 {
   font-family: Roboto;
   font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 250px;
 }
 .container__menu .type__menu .card__contain .subtitle {
   display: flex;
@@ -311,7 +315,7 @@ header a::before {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 13px;
-  width: 250px;
+  max-width: 250px;
 }
 .container__menu .type__menu--1 {
   animation: affichage 1s;
