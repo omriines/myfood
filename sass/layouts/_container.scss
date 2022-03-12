@@ -2,14 +2,12 @@
 header a::before {
   position: absolute;
   display: flex;
-  -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f060";
-  top: 33px;
+  top: 24px;
   left: 8%;
   font-size: 21px;
-  transform: translateY(-50%);
   color: $color-black;
   cursor: pointer;
 }
@@ -171,13 +169,13 @@ header a::before {
               white-space: nowrap;
               text-overflow: ellipsis;
               @include size-desription-menu;
-              max-width: 250px;
+              max-width: 70%;
             }
             & h3{
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
-                max-width: 250px;
+                max-width: 70%;
             }
           }
         

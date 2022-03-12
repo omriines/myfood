@@ -108,14 +108,12 @@ footer ul li:first-child a {
 header a::before {
   position: absolute;
   display: flex;
-  -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f060";
-  top: 33px;
+  top: 24px;
   left: 8%;
   font-size: 21px;
-  transform: translateY(-50%);
   color: #000000;
   cursor: pointer;
 }
@@ -310,13 +308,13 @@ header a::before {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 13px;
-  max-width: 250px;
+  max-width: 70%;
 }
 .container__menu .type__menu .card:hover h3 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 250px;
+  max-width: 70%;
 }
 .container__menu .type__menu--1 {
   animation: affichage 1s;
@@ -350,7 +348,6 @@ header a::before {
 .loading {
   border: 10px solid #ff79da;
   border-top: 10px solid #9356dc;
-  border-bottom: 10px solid #ff79da;
   border-radius: 50%;
   width: 100px;
   height: 100px;
