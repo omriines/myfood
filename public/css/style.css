@@ -271,10 +271,6 @@ header a::before {
 .container__menu .type__menu .card__contain h3 {
   font-family: Roboto;
   font-size: 18px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 250px;
 }
 .container__menu .type__menu .card__contain .subtitle {
   display: flex;
@@ -314,6 +310,12 @@ header a::before {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 13px;
+  max-width: 250px;
+}
+.container__menu .type__menu .card:hover h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   max-width: 250px;
 }
 .container__menu .type__menu--1 {

@@ -131,10 +131,6 @@ header a::before {
             & h3 {
               @include police-text;
               @include size-tile-menu;
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-              max-width: 250px;
             }
             & .subtitle {
               display: flex;
@@ -176,6 +172,12 @@ header a::before {
               text-overflow: ellipsis;
               @include size-desription-menu;
               max-width: 250px;
+            }
+            & h3{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 250px;
             }
           }
         
